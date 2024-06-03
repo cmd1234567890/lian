@@ -1,0 +1,41 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>登录</title>  
+<script>  
+function getCookie(cookieName) {  
+    // ... (您的getCookie函数代码)  
+}  
+  
+function loginUser() {  
+    const username = document.getElementById('username').value;  
+    const password = document.getElementById('password').value;  
+    const storedUser = getCookie('user');  
+      
+    // 假设用户名和密码以冒号分隔，这在真实环境中是不安全的  
+    if (storedUser && storedUser.split(':')[0] === username && storedUser.split(':')[1] === password) {  
+        window.location.href = 'Home.html'; // 跳转到主页  
+    } else {  
+        alert('请先注册用户');  
+        window.location.href = 'register.html'; // 回到注册页面  
+    }  
+}  
+</script>  
+</head>  
+<body>  
+  
+<h1>登录</h1>  
+<form>  
+    <label for="username">用户名:</label>  
+    <input type="text" id="username" required><br>  
+  
+    <label for="password">密码:</label>  
+    <input type="password" id="password" required><br>  
+  
+    <input type="button" value="登录" onclick="loginUser()">  
+</form>  
+  
+</body>  
+</html>

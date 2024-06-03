@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>注册</title>  
+<script>  
+function setCookie(cookieName, cookieValue, expirationDays) {  
+    // ... (您的setCookie函数代码)  
+}  
+  
+function registerUser() {  
+    const username = document.getElementById('username').value;  
+    const password = document.getElementById('password').value;  
+    // 这里为了简单起见，我们只是将用户名和密码拼接成一个字符串来保存  
+    // 在实际应用中，您应该使用更安全的方法来存储和验证密码  
+    setCookie('user', `${username}:${password}`, 7); // 假设cookie有效期为7天  
+    window.location.href = 'login.html'; // 跳转到登录页面  
+}  
+</script>  
+</head>  
+<body>  
+  
+<h1>注册新用户</h1>  
+<form>  
+    <label for="username">用户名:</label>  
+    <input type="text" id="username" required><br>  
+  
+    <label for="password">密码:</label>  
+    <input type="password" id="password" required><br>  
+  
+    <input type="button" value="注册" onclick="registerUser()">  
+</form>  
+  
+</body>  
+</html>
